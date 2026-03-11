@@ -1,0 +1,4 @@
+enum AppEnvironment {
+  local,
+  live,
+}
