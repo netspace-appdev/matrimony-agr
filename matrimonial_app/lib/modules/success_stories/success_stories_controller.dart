@@ -2,10 +2,11 @@
 import 'package:agraseva/modules/success_stories/data/model/success_story_apiModel.dart';
 import 'package:get/get.dart';
 import '../../Api/services/ContentService.dart';
-import '../../data/models/member_model.dart';
 
 // lib/app/modules/success_stories/success_stories_controller.dart
 import 'package:get/get.dart';
+
+import '../social_members/data/model/member_model.dart';
 
 
 

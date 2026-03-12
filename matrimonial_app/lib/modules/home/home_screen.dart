@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/common_widgets.dart';
 import '../../routes/app_routes.dart';
-import '../../data/models/member_model.dart';
 import '../../widgets/drawer.dart';
+import '../social_members/data/model/member_model.dart';
 import 'home_controller.dart';
 
 class HomeScreen extends  StatelessWidget{ //GetView<HomeController> {

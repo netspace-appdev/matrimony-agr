@@ -1,4 +1,3 @@
-// lib/app/data/services/content_service.dart
 import 'package:dio/dio.dart';
 import '../config/AppConfig.dart';
 import 'api_response.dart';
@@ -10,6 +9,8 @@ class ContentService {
   static String get contactUsApiUrl      => '${AppConfig.apiBaseUrl}content/contact-us';
   static String get newsApiUrl           => '${AppConfig.apiBaseUrl}content/news';
   static String get staticPageApiUrl     => '${AppConfig.apiBaseUrl}content/static-page';
+  static String get noticeApiUrl         => '${AppConfig.apiBaseUrl}content/notice';
+
 
   static final Dio _dio = Dio(
     BaseOptions(
@@ -169,6 +170,38 @@ class ContentService {
       }
 
       return ApiResponse.error(data['message'] ?? 'Failed to load page');
+    } on DioException catch (e) {
+      print("❌ DIO ERROR: ${e.response?.data}");
+      return ApiResponse.error(
+        e.response?.data?['message'] ?? e.message ?? 'Server error',
+        statusCode: e.response?.statusCode,
+      );
+    } catch (e) {
+      return ApiResponse.error('Unexpected error: ${e.toString()}');
+    }
+  }
+
+
+  static Future<ApiResponse<dynamic>> getNotice({required String noticeId}) async {
+    try {
+      final requestBody = {'notice_id': noticeId};
+
+      print("📤 NOTICE API URL: $noticeApiUrl");
+      print("📤 REQUEST BODY: $requestBody");
+
+      final response = await _dio.post(noticeApiUrl, data: requestBody);
+      final data = response.data;
+
+      print("📥 NOTICE RESPONSE: $data");
+
+      if (response.statusCode == 200) {
+        return ApiResponse.success(
+          data['message'] ?? 'Notices fetched',
+          data: data,
+        );
+      }
+
+      return ApiResponse.error(data['message'] ?? 'Failed to load notices');
     } on DioException catch (e) {
       print("❌ DIO ERROR: ${e.response?.data}");
       return ApiResponse.error(

@@ -178,10 +178,10 @@ class MyProfileScreen extends StatelessWidget  {
                   const SizedBox(height: 10),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(100),
-                    child: LinearProgressIndicator(
+                    child: const LinearProgressIndicator(
                       value: 0.72,
                       backgroundColor: AppColors.bgLight,
-                      valueColor: const AlwaysStoppedAnimation<Color>(
+                      valueColor: AlwaysStoppedAnimation<Color>(
                           AppColors.primary),
                       minHeight: 8,
                     ),
@@ -196,7 +196,7 @@ class MyProfileScreen extends StatelessWidget  {
           ),
 
           // My Activity section
-          SliverToBoxAdapter(
+       /*   SliverToBoxAdapter(
             child: _SectionLabel(label: 'My Activity'),
           ),
           SliverToBoxAdapter(
@@ -224,7 +224,7 @@ class MyProfileScreen extends StatelessWidget  {
                     onTap: () => Get.toNamed(AppRoutes.messages)),
               ],
             ),
-          ),
+          ),*/
 
           // Community
           SliverToBoxAdapter(child: _SectionLabel(label: 'Community')),

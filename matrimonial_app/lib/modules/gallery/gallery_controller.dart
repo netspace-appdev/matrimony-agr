@@ -1,7 +1,6 @@
 // lib/app/modules/gallery/gallery_controller.dart
 import 'package:get/get.dart';
 import '../../Api/services/ContentService.dart';
-import '../../data/models/member_model.dart';
 
 // lib/app/modules/gallery/gallery_controller.dart
 import 'package:get/get.dart';

@@ -1,7 +1,7 @@
 // lib/app/modules/visitors/visitors_controller.dart
 import 'package:get/get.dart';
-import '../../data/models/member_model.dart';
 import '../../routes/app_routes.dart';
+import '../social_members/data/model/member_model.dart';
 
 class VisitorsController extends GetxController {
   final visitors = <MemberModel>[].obs;

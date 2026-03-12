@@ -1,6 +1,6 @@
 // lib/app/modules/home/home_controller.dart
 import 'package:get/get.dart';
-import '../../data/models/member_model.dart';
+import '../social_members/data/model/member_model.dart';
 
 class HomeController extends GetxController {
   final currentNavIndex = 0.obs;

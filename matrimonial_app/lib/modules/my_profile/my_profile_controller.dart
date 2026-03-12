@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../routes/app_routes.dart';
 import '../../theme/app_theme.dart';
+import '../../utils/storage_service.dart';
 import '../../widgets/common_widgets.dart';
 
 class MyProfileController extends GetxController {
@@ -49,5 +50,8 @@ class MyProfileController extends GetxController {
     );
   }
 
-  void confirmLogout() => Get.offAllNamed(AppRoutes.login);
+  void confirmLogout() {
+    StorageService.clear();
+    Get.offAllNamed(AppRoutes.login);
+  }
 }

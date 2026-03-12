@@ -1,4 +1,5 @@
 // lib/app/modules/gallery/gallery_screen.dart
+import 'package:agraseva/Api/config/AppConfig.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../theme/app_theme.dart';
@@ -132,9 +133,9 @@ class GalleryScreen extends GetView<GalleryController> {
                                             top: Radius.circular(16)),
                                   ),
                                   child: Center(
-                                    child: Text(item.imgId.toString(),
+                                    child: Text('${AppConfig.apiBaseUrl}${item.image.toString()}',
                                         style: const TextStyle(
-                                            fontSize: 50)),
+                                            fontSize: 10)),
                                   ),
                                 ),
                               ),
@@ -187,7 +188,20 @@ class GalleryScreen extends GetView<GalleryController> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(emoji, style: const TextStyle(fontSize: 72)),
+              Image.network(
+                '${AppConfig.apiBaseUrl}${emoji.toString()}',
+                width: 72,
+                height: 72,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset(
+                    'assets/images/gallery.png', // your fallback image
+                    width: 72,
+                    height: 72,
+                    fit: BoxFit.cover,
+                  );
+                },
+              ),
               const SizedBox(height: 12),
               Text(title,
                   style: const TextStyle(
@@ -200,7 +214,7 @@ class GalleryScreen extends GetView<GalleryController> {
                 spacing: 6,
                 children: [
                   InfoTag(label: '📅 $date'),
-                  InfoTag(label: category),
+                  //InfoTag(label: category),
                 ],
               ),
               const SizedBox(height: 20),
