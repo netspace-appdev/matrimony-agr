@@ -2,7 +2,7 @@ class StateListModel {
   String? status;
   int? responseCode;
   String? message;
-  List<Result>? result;
+  List<StateResult>? result;
 
   StateListModel({this.status, this.responseCode, this.message, this.result});
 
@@ -11,9 +11,9 @@ class StateListModel {
     responseCode = json['response_code'];
     message = json['message'];
     if (json['result'] != null) {
-      result = <Result>[];
+      result = <StateResult>[];
       json['result'].forEach((v) {
-        result!.add(new Result.fromJson(v));
+        result!.add(new StateResult.fromJson(v));
       });
     }
   }
@@ -30,14 +30,14 @@ class StateListModel {
   }
 }
 
-class Result {
+class StateResult {
   int? stateId;
   String? state;
   int? status;
 
-  Result({this.stateId, this.state, this.status});
+  StateResult({this.stateId, this.state, this.status});
 
-  Result.fromJson(Map<String, dynamic> json) {
+  StateResult.fromJson(Map<String, dynamic> json) {
     stateId = json['state_id'];
     state = json['state'];
     status = json['status'];

@@ -10,6 +10,12 @@ class VisitorsScreen extends GetView<VisitorsController> {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+/*  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgLight,
       body: Column(
@@ -206,7 +212,7 @@ class VisitorsScreen extends GetView<VisitorsController> {
         ],
       ),
     );
-  }
+  }*/
 }
 
 class _StatBox extends StatelessWidget {

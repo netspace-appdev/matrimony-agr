@@ -1,4 +1,6 @@
 // lib/app/routes/app_pages.dart
+import 'package:agraseva/modules/add_socail_member/add_social_members_screen.dart';
+import 'package:agraseva/modules/add_socail_member/data/model/add_member_model.dart';
 import 'package:get/get.dart';
 import '../modules/splash/splash_binding.dart';
 import '../modules/splash/splash_screen.dart';
@@ -103,6 +105,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.socialMembers,
       page: () => const SocialMembersScreen(),
+      binding: SocialMembersBinding(),
+      transition: Transition.rightToLeft,
+    ), GetPage(
+      name: AppRoutes.socialMemberSignup,
+      page: () => SocialMemberSignupScreen(),
       binding: SocialMembersBinding(),
       transition: Transition.rightToLeft,
     ),

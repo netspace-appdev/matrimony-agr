@@ -489,6 +489,7 @@ class AuthScreen extends StatelessWidget {
   AuthScreen({super.key});
 
   final AuthController controller = Get.put(AuthController());
+  //final AuthController controller= Get.find();
 
   @override
   Widget build(BuildContext context) {

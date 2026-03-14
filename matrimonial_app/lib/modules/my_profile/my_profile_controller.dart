@@ -7,6 +7,12 @@ import '../../utils/storage_service.dart';
 import '../../widgets/common_widgets.dart';
 
 class MyProfileController extends GetxController {
+  @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+
+  }
   void logout() {
     Get.dialog(
       Dialog(

@@ -2,7 +2,7 @@ class GotraListModel {
   String? status;
   int? responseCode;
   String? message;
-  List<Result>? result;
+  List<GotraResult>? result;
 
   GotraListModel({this.status, this.responseCode, this.message, this.result});
 
@@ -11,9 +11,9 @@ class GotraListModel {
     responseCode = json['response_code'];
     message = json['message'];
     if (json['result'] != null) {
-      result = <Result>[];
+      result = <GotraResult>[];
       json['result'].forEach((v) {
-        result!.add(new Result.fromJson(v));
+        result!.add(new GotraResult.fromJson(v));
       });
     }
   }
@@ -30,14 +30,14 @@ class GotraListModel {
   }
 }
 
-class Result {
+class GotraResult {
   int? gId;
   String? gotra;
   int? status;
 
-  Result({this.gId, this.gotra, this.status});
+  GotraResult({this.gId, this.gotra, this.status});
 
-  Result.fromJson(Map<String, dynamic> json) {
+  GotraResult.fromJson(Map<String, dynamic> json) {
     gId = json['g_id'];
     gotra = json['gotra'];
     status = json['status'];

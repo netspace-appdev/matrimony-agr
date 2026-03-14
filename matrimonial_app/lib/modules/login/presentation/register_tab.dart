@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../theme/app_theme.dart';
 import '../../../widgets/common_widgets.dart';
+import '../../common/common_controller.dart';
 import '../../terms/terms_screen.dart';
 import 'auth_controller.dart';
 
@@ -12,6 +13,7 @@ class RegisterTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final c = Get.find<AuthController>();
+    final common = Get.find<CommonController>();   // ← single line added
 
     return SingleChildScrollView(
       padding: const EdgeInsets.fromLTRB(22, 24, 22, 32),
@@ -93,10 +95,10 @@ class RegisterTab extends StatelessWidget {
           // ── Gotra  →  c.gotraDropdownValue ─────────────────────────────
           Obx(() => _DropdownField(
             icon: 'assets/images/gotra.png',
-            value: c.gotraDropdownValue.value,
-            items: c.gotraList,
-            errorText: c.gotraError.value,
-            onChanged: (val) => c.onGotraChanged(val!),
+            value: common.gotraDropdownValue.value,
+            items: common.gotraList,
+            errorText: common.gotraError.value,
+            onChanged: (val) => common.onGotraChanged(val!),
           )),
           const SizedBox(height: 14),
 
@@ -161,20 +163,20 @@ class RegisterTab extends StatelessWidget {
           // ── State  →  c.stateDropdownValue ─────────────────────────────
           Obx(() => _DropdownField(
             icon: 'assets/images/state.png',
-            value: c.stateDropdownValue.value,
-            items: c.stateList,
-            errorText: c.stateError.value,
-            onChanged: (val) => c.onStateChanged(val!),
+            value: common.stateDropdownValue.value,
+            items: common.stateList,
+            errorText: common.stateError.value,
+            onChanged: (val) => common.onStateChanged(val!),
           )),
           const SizedBox(height: 14),
 
           // ── City  →  c.cityDropdownValue ───────────────────────────────
           Obx(() => _DropdownField(
             icon: 'assets/images/city.png',
-            value: c.cityDropdownValue.value,
-            items: c.cityList,
-            errorText: c.cityError.value,
-            onChanged: (val) => c.onCityChanged(val!),
+            value: common.cityDropdownValue.value,
+            items: common.cityList,
+            errorText: common.cityError.value,
+            onChanged: (val) => common.onCityChanged(val!),
           )),
           const SizedBox(height: 14),
 

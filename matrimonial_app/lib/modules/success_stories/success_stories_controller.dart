@@ -46,11 +46,11 @@ class SuccessStoriesController extends GetxController {
 }*/
 
 class SuccessStoriesController extends GetxController {
-  final stories = <SuccessStoryModel>[].obs;
+  final stories = <SuccessStoryApiModel>[].obs;
 
   @override
   void onInit() {
     super.onInit();
-    stories.assignAll(SampleData.successStories);
+  //  stories.assignAll(SampleData.successStories);
   }
 }

@@ -19,4 +19,6 @@ abstract class AppRoutes {
   static const privacy = '/privacy';
   static const contact = '/contact';
   static const mainNav = '/main';
+
+  static String socialMemberSignup='/socialMemberSignup';
 }

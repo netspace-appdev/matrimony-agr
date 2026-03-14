@@ -2,7 +2,7 @@ class CityListModel {
   String? status;
   int? responseCode;
   String? message;
-  List<Result>? result;
+  List<CityResult>? result;
 
   CityListModel({this.status, this.responseCode, this.message, this.result});
 
@@ -11,9 +11,9 @@ class CityListModel {
     responseCode = json['response_code'];
     message = json['message'];
     if (json['result'] != null) {
-      result = <Result>[];
+      result = <CityResult>[];
       json['result'].forEach((v) {
-        result!.add(new Result.fromJson(v));
+        result!.add(new CityResult.fromJson(v));
       });
     }
   }
@@ -30,15 +30,15 @@ class CityListModel {
   }
 }
 
-class Result {
+class CityResult {
   int? distId;
   String? district;
   int? stateId;
   int? status;
 
-  Result({this.distId, this.district, this.stateId, this.status});
+  CityResult({this.distId, this.district, this.stateId, this.status});
 
-  Result.fromJson(Map<String, dynamic> json) {
+  CityResult.fromJson(Map<String, dynamic> json) {
     distId = json['dist_id'];
     district = json['district'];
     stateId = json['state_id'];

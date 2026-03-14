@@ -10,6 +10,12 @@ class SuccessStoriesScreen extends GetView<SuccessStoriesController> {
 
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+/*  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgLight,
       body: CustomScrollView(
@@ -224,7 +230,7 @@ class SuccessStoriesScreen extends GetView<SuccessStoriesController> {
         ],
       ),
     );
-  }
+  }*/
 }
 
 class _HeroStat extends StatelessWidget {
