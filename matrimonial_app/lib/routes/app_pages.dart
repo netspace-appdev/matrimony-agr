@@ -1,6 +1,7 @@
 // lib/app/routes/app_pages.dart
 import 'package:agraseva/modules/add_socail_member/add_social_members_screen.dart';
 import 'package:agraseva/modules/add_socail_member/data/model/add_member_model.dart';
+import 'package:agraseva/modules/my_profile/editProfilePage.dart';
 import 'package:get/get.dart';
 import '../modules/splash/splash_binding.dart';
 import '../modules/splash/splash_screen.dart';
@@ -144,6 +145,12 @@ class AppPages {
       name: AppRoutes.contact,
       page: () => const ContactScreen(),
       binding: ContactBinding(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: AppRoutes.editProfile,
+      page: () => const EditProfilePage(),
+      binding: MyProfileBinding(),
       transition: Transition.rightToLeft,
     ),
   ];

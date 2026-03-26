@@ -21,4 +21,5 @@ abstract class AppRoutes {
   static const mainNav = '/main';
 
   static String socialMemberSignup='/socialMemberSignup';
+  static String editProfile='/editProfile';
 }
