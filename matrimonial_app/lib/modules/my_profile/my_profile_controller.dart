@@ -1,18 +1,56 @@
 // lib/app/modules/my_profile/my_profile_controller.dart
+import 'package:agraseva/Api/services/dashboard_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../routes/app_routes.dart';
 import '../../theme/app_theme.dart';
 import '../../utils/storage_service.dart';
 import '../../widgets/common_widgets.dart';
+import 'data/model/profile_model.dart';
 
 class MyProfileController extends GetxController {
+
+  final RxBool isLoading = true.obs;
+  final RxString errorMessage = ''.obs;
+
+  var userProfile = Rxn<UserProfile>();
+
   @override
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-
+   // fetchUserProfile();
   }
+
+
+
+/*
+  Future<void> fetchUserProfile() async {
+    try {
+      isLoading.value = true;
+      errorMessage.value = '';
+
+      print("📤 Fetching user profile...");
+
+      final result = await DashboardService.getUserDetails();
+
+      if (result.success && result.data != null) {
+        userProfile.value = result.data;
+        print("✅ Profile loaded: ${result.data!.fullName}");
+      } else {
+        errorMessage.value = result.message ?? 'Failed to load profile';
+        print("❌ Profile error: ${result.message}");
+      }
+    } catch (e) {
+      errorMessage.value = 'Unexpected error: ${e.toString()}';
+      print("❌ Exception: $e");
+    } finally {
+      isLoading.value = false;
+    }
+  }
+*/
+
+
   void logout() {
     Get.dialog(
       Dialog(

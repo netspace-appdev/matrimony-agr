@@ -1,4 +1,4 @@
-// lib/app/data/models/news_model.dart
+// lib/app/data/models/profile_model.dart
 
 class NewsModel {
   String? status;

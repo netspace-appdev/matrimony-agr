@@ -10,6 +10,7 @@ class DashboardService {
 
   static String get dashboardApiUrl => '${AppConfig.apiBaseUrl}member/dashboard';
 
+
   static final Dio _dio = Dio(
     BaseOptions(
       connectTimeout: ApiConstants.connectionTimeout,

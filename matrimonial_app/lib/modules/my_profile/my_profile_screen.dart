@@ -227,7 +227,7 @@ class MyProfileScreen extends StatelessWidget  {
           ),*/
 
           // Community
-          SliverToBoxAdapter(child: _SectionLabel(label: 'Community')),
+          const SliverToBoxAdapter(child: _SectionLabel(label: 'Community')),
           SliverToBoxAdapter(
             child: Column(
               children: [
@@ -256,7 +256,7 @@ class MyProfileScreen extends StatelessWidget  {
           ),
 
           // Account & Support
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
               child: _SectionLabel(label: 'Account & Support')),
           SliverToBoxAdapter(
             child: Column(
